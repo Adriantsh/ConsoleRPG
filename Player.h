@@ -7,12 +7,17 @@ private:
     int health;
     int maxHealth;
     int attackPower;
+
 public:
+    // constructors and destructor
     Player();
     Player(std::string, int, int);
     ~Player();
+
+    // deal damage to player
     void takeDamage(int);
 
+    // accessors
     std::string getName() const 
         { return name; }
     int getHealth() const 
@@ -22,5 +27,6 @@ public:
     int getAttackPower() const
         { return attackPower; }
 
+    // display stats to terminal
     void displayStatus() const;
 };

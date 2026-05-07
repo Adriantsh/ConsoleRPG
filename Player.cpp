@@ -1,6 +1,7 @@
 #include "Player.h"
 #include <iostream>
 
+// default constructor
 Player::Player() {
     name = "Hero";
     health = 100;
@@ -8,6 +9,7 @@ Player::Player() {
     attackPower = 10;
 }
 
+// overloaded constructor
 Player::Player(std::string name, int health, int attackPower) {
     this->name = name;
     this->health = health;
@@ -15,10 +17,12 @@ Player::Player(std::string name, int health, int attackPower) {
     maxHealth = health;
 }
 
+// destructor
 Player::~Player() {
     std::cout << "The object for Player " << name << " has been destroyed.\n";
 }
 
+// takeDamage mathod (health cannot go below 0)
 void Player::takeDamage(int damage) {
     if ( damage > 0 ) {
         if ( damage <= health ) {
@@ -31,6 +35,7 @@ void Player::takeDamage(int damage) {
     }
 }
 
+// display stats
 void Player::displayStatus() const {
     std::cout << name << " - HP: " << health << "/" << maxHealth << std::endl;
 }
